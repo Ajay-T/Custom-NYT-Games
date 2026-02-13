@@ -18,23 +18,23 @@ export interface ConnectionGroup {
 export const connectionsConfig = {
   groups: [
     {
-      name: "Impractical jokers: Joelie (Joe), Salad (Sal), Queue (Q), Murr (Murr)",
-      words: ["JOELLE", "SALAD", "QUEUE", "MURR"],
-      color: "yellow",
-    },
-    {
       name: "Roommates",
       words: ["CHARLOTTE", "IZZY", "PENELOPE", "MEGAN"],
-      color: "green",
+      color: "yellow",
     },
     {
       name: "Plants",
       words: ["LILY", "SPINACH", "PEANUT", "GOURD"],
-      color: "blue",
+      color: "green",
     },
     {
       name: "Animals",
       words: ["WHALE", "COW", "HIPPO", "TICK"],
+      color: "blue",
+    },
+    {
+      name: "Impractical jokers: Joelie (Joe), Salad (Sal), Queue (Q), Murr (Murr)",
+      words: ["JOELIE", "SALAD", "QUEUE", "MURR"],
       color: "purple",
     },
   ] as ConnectionGroup[],
