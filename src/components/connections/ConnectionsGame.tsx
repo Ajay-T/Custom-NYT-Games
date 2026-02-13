@@ -181,12 +181,12 @@ export default function ConnectionsGame() {
       >
         {gameStatus === "won" ? (
           <div>
-            <p className="text-5xl mb-4">🎉💖</p>
+            <p className="text-5xl mb-4">🎉 ♡</p>
             <p className="text-warm-gray">You found all the connections!</p>
           </div>
         ) : (
           <div>
-            <p className="text-5xl mb-4">💔</p>
+            <p className="text-5xl mb-4">♡</p>
             <p className="text-warm-gray">You ran out of mistakes, but check out the answers above!</p>
           </div>
         )}

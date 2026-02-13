@@ -125,7 +125,7 @@ export default function WordleGame() {
       >
         {gameStatus === "won" ? (
           <div>
-            <p className="text-5xl mb-4">🎉💖</p>
+            <p className="text-5xl mb-4">🎉 ♡</p>
             <p className="text-warm-gray">
               You guessed <span className="font-bold text-rose">{targetWord}</span> in {guesses.length} {guesses.length === 1 ? "try" : "tries"}!
             </p>
