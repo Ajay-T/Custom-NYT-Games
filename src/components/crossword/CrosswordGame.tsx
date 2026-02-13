@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import CrosswordGrid from "./CrosswordGrid";
 import ClueList from "./ClueList";
 import Modal from "@/components/shared/Modal";
@@ -58,6 +58,7 @@ export default function CrosswordGame() {
   const [incorrectCells, setIncorrectCells] = useState<Set<string>>(new Set());
   const [solved, setSolved] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const activeClue = selectedCell
     ? findClueForCell(selectedCell.row, selectedCell.col, direction) ??
@@ -74,6 +75,8 @@ export default function CrosswordGame() {
         setSelectedCell({ row, col });
       }
       setIncorrectCells(new Set());
+      // Focus hidden input to trigger mobile keyboard
+      inputRef.current?.focus();
     },
     [selectedCell],
   );
@@ -84,6 +87,8 @@ export default function CrosswordGame() {
     const isAcross = crosswordConfig.clues.across.includes(clue);
     setDirection(isAcross ? "across" : "down");
     setIncorrectCells(new Set());
+    // Focus hidden input to trigger mobile keyboard
+    inputRef.current?.focus();
   }, []);
 
   const checkCompletion = useCallback(
@@ -200,6 +205,21 @@ export default function CrosswordGame() {
 
   return (
     <div className="flex flex-col items-center w-full max-w-2xl mx-auto px-4">
+      {/* Hidden input for mobile keyboard support */}
+      <input
+        ref={inputRef}
+        type="text"
+        inputMode="text"
+        autoComplete="off"
+        autoCapitalize="characters"
+        className="sr-only"
+        style={{ position: 'absolute', opacity: 0, pointerEvents: 'none' }}
+        onKeyDown={(e) => {
+          // Convert to KeyboardEvent type for handleKeyDown
+          handleKeyDown(e as unknown as KeyboardEvent);
+        }}
+      />
+      
       <div className="flex flex-col sm:flex-row gap-6 items-start w-full">
         {/* Grid */}
         <div className="flex-shrink-0 mx-auto sm:mx-0">

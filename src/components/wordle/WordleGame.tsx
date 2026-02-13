@@ -58,7 +58,7 @@ export default function WordleGame() {
               setTimeout(() => setShowModal(true), 600);
             }
           }, 300);
-        }, 5 * 300 + 200); // wait for all tiles to flip
+        }, 100); // Reduced delay for snappier response
 
         return;
       }
