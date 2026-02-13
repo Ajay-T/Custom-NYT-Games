@@ -26,15 +26,15 @@ export default function Home() {
     <main className="min-h-screen flex flex-col items-center justify-center px-4 py-12 relative overflow-hidden">
       {/* Decorative background hearts */}
       <div className="absolute inset-0 pointer-events-none select-none opacity-10 text-rose text-6xl overflow-hidden" aria-hidden="true">
-        {["♡", "♥", "♡", "♥", "♡", "♥", "♡", "♥", "♡", "♥"].map((h, i) => (
+        {["♡", "♥", "♡", "♥", "♡", "♥", "♡", "♥", "♡", "♥", "♡", "♥", "♡", "♥", "♡"].map((h, i) => (
           <span
             key={i}
             className="absolute"
             style={{
-              left: `${(i * 10) + 2}%`,
-              top: `${(i * 7 + 15) % 90}%`,
-              fontSize: `${1.5 + (i % 3)}rem`,
-              transform: `rotate(${i * 36}deg)`,
+              left: `${(i * 7) + 2}%`,
+              top: `${(i * 6 + 10) % 95}%`,
+              fontSize: `${1.5 + (i % 4)}rem`,
+              transform: `rotate(${i * 24}deg)`,
             }}
           >
             {h}
@@ -45,10 +45,10 @@ export default function Home() {
       <div className="text-center mb-12 relative z-10">
         <p className="text-5xl mb-4">♡</p>
         <h1 className="text-4xl sm:text-5xl font-bold text-rose mb-3">
-          Happy Valentine&apos;s Day Junkly!
+          Happy Valentine&apos;s Day Junkly
         </h1>
         <p className="text-warm-gray text-lg max-w-md mx-auto">
-          I made you some games. Pick one and play!
+          I made you some games
         </p>
       </div>
 
