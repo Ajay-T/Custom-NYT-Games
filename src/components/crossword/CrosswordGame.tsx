@@ -170,10 +170,7 @@ export default function CrosswordGame() {
     [selectedCell, userGrid, direction, solved, checkCompletion],
   );
 
-  useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [handleKeyDown]);
+  // No need for window listener anymore - the hidden input handles keyboard events
 
   const handleCheck = useCallback(() => {
     const incorrect = new Set<string>();
@@ -213,10 +210,20 @@ export default function CrosswordGame() {
         autoComplete="off"
         autoCapitalize="characters"
         className="sr-only"
+        value=""
         style={{ position: 'absolute', opacity: 0, pointerEvents: 'none' }}
+        onChange={() => {}} // Prevent React warning
         onKeyDown={(e) => {
+          // Prevent default to avoid any browser behavior
+          e.preventDefault();
           // Convert to KeyboardEvent type for handleKeyDown
           handleKeyDown(e as unknown as KeyboardEvent);
+        }}
+        onBlur={() => {
+          // Re-focus if a cell is selected (keeps keyboard open on mobile)
+          if (selectedCell) {
+            setTimeout(() => inputRef.current?.focus(), 0);
+          }
         }}
       />
       
