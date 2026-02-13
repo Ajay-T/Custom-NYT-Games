@@ -33,11 +33,11 @@ export default function Keyboard({ letterStatuses, onKey }: KeyboardProps) {
                 key={key}
                 onClick={() => onKey(key === "⌫" ? "BACKSPACE" : key)}
                 className={cn(
-                  "h-14 rounded-md font-bold text-sm sm:text-base flex items-center justify-center transition-colors select-none",
+                  "h-14 rounded-md font-bold text-sm sm:text-base flex items-center justify-center transition-all duration-150 select-none active:scale-95 touch-manipulation",
                   isWide ? "px-2 sm:px-4 min-w-[52px] sm:min-w-[65px]" : "min-w-[28px] sm:min-w-[40px] flex-1",
                   status
                     ? statusColors[status]
-                    : "bg-gray-200 text-foreground hover:bg-gray-300 border border-gray-300",
+                    : "bg-gray-200 text-foreground hover:bg-gray-300 active:bg-gray-400 border border-gray-300",
                 )}
               >
                 {key}

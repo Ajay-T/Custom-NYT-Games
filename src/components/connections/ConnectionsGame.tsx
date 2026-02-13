@@ -154,20 +154,20 @@ export default function ConnectionsGame() {
         <div className="flex gap-3">
           <button
             onClick={handleShuffle}
-            className="px-5 py-2.5 rounded-full border border-gray-300 text-sm font-semibold text-foreground hover:bg-gray-100 transition-colors"
+            className="px-5 py-2.5 rounded-full border border-gray-300 text-sm font-semibold text-foreground hover:bg-gray-100 active:bg-gray-200 transition-all active:scale-95 touch-manipulation"
           >
             Shuffle
           </button>
           <button
             onClick={handleDeselect}
-            className="px-5 py-2.5 rounded-full border border-gray-300 text-sm font-semibold text-foreground hover:bg-gray-100 transition-colors"
+            className="px-5 py-2.5 rounded-full border border-gray-300 text-sm font-semibold text-foreground hover:bg-gray-100 active:bg-gray-200 transition-all active:scale-95 touch-manipulation"
           >
             Deselect All
           </button>
           <button
             onClick={handleSubmit}
             disabled={selected.length !== 4}
-            className="px-5 py-2.5 rounded-full bg-foreground text-white text-sm font-semibold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-foreground/80 transition-colors"
+            className="px-5 py-2.5 rounded-full bg-foreground text-white text-sm font-semibold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-foreground/80 active:bg-foreground/70 transition-all active:scale-95 touch-manipulation"
           >
             Submit
           </button>

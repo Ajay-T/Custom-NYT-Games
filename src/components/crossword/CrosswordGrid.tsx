@@ -70,10 +70,10 @@ export default function CrosswordGrid({
               key={cellKey}
               onClick={() => onCellClick(row, col)}
               className={cn(
-                "w-12 h-12 sm:w-14 sm:h-14 border border-gray-300 relative cursor-pointer select-none flex items-center justify-center",
+                "w-12 h-12 sm:w-14 sm:h-14 border border-gray-300 relative cursor-pointer select-none flex items-center justify-center transition-colors duration-150 active:scale-95 touch-manipulation",
                 isSelected && "bg-rose/30",
                 !isSelected && isHighlighted && "bg-rose/10",
-                !isSelected && !isHighlighted && "bg-white",
+                !isSelected && !isHighlighted && "bg-white hover:bg-rose/5",
                 isIncorrect && "bg-red-100",
               )}
             >

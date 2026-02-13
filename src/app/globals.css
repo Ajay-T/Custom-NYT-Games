@@ -51,13 +51,21 @@ body {
 
 /* Wordle tile flip */
 @keyframes flip {
-  0% { transform: rotateX(0deg); }
-  50% { transform: rotateX(90deg); }
-  100% { transform: rotateX(0deg); }
+  0% { 
+    transform: rotateX(0deg);
+  }
+  50% { 
+    transform: rotateX(90deg);
+  }
+  100% { 
+    transform: rotateX(0deg);
+  }
 }
 
 .animate-flip {
   animation: flip 0.5s ease-in-out;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
 /* Shake animation for wrong guesses */
@@ -69,6 +77,7 @@ body {
 
 .animate-shake {
   animation: shake 0.5s ease-in-out;
+  will-change: transform;
 }
 
 /* Pop animation for tile entry */
@@ -80,6 +89,7 @@ body {
 
 .animate-pop {
   animation: pop 0.1s ease-in-out;
+  will-change: transform;
 }
 
 /* Bounce animation for win */
@@ -90,6 +100,7 @@ body {
 
 .animate-bounce-tile {
   animation: bounce-tile 0.5s ease-in-out;
+  will-change: transform;
 }
 
 /* Connections card fade in */

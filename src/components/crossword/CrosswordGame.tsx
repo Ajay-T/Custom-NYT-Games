@@ -255,13 +255,13 @@ export default function CrosswordGame() {
         <div className="flex gap-3 mt-6">
           <button
             onClick={handleCheck}
-            className="px-5 py-2.5 rounded-full border border-gray-300 text-sm font-semibold text-foreground hover:bg-gray-100 transition-colors"
+            className="px-5 py-2.5 rounded-full border border-gray-300 text-sm font-semibold text-foreground hover:bg-gray-100 active:bg-gray-200 transition-all active:scale-95 touch-manipulation"
           >
             Check
           </button>
           <button
             onClick={handleReveal}
-            className="px-5 py-2.5 rounded-full bg-rose text-white text-sm font-semibold hover:bg-rose-dark transition-colors"
+            className="px-5 py-2.5 rounded-full bg-rose text-white text-sm font-semibold hover:bg-rose-dark active:bg-rose-dark/80 transition-all active:scale-95 touch-manipulation"
           >
             Reveal
           </button>
