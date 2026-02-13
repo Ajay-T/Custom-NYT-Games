@@ -4,7 +4,7 @@
 
 // --- WORDLE ---
 export const wordleConfig = {
-  targetWord: "HEART", // Must be exactly 5 uppercase letters
+  targetWord: "BABBY", // Must be exactly 5 uppercase letters
   maxGuesses: 6,
 };
 
@@ -55,29 +55,30 @@ export interface CrosswordClue {
 export const crosswordConfig = {
   size: 5,
   grid: [
+    [null, "", null, "", null],
     ["", "", "", "", ""],
-    ["", null, "", null, ""],
     ["", "", "", "", ""],
-    ["", null, "", null, ""],
-    ["", "", "", "", ""],
+    [null, "", "", "", null],
+    [null, null, "", null, null],
   ] as (string | null)[][],
   answers: [
-    ["H", "E", "A", "R", "T"],
-    ["U", null, "D", null, "O"],
-    ["K", "I", "O", "R", "E"],
-    ["E", null, "R", null, "S"],
-    ["S", "W", "E", "E", "T"],
+    [null, "", null, "", null],
+    ["", "", "", "", ""],
+    ["", "", "", "", ""],
+    [null, "", "", "", null],
+    [null, null, "", null, null],
   ] as (string | null)[][],
   clues: {
     across: [
-      { number: 1, clue: "Symbol of love", row: 0, col: 0, length: 5 },
-      { number: 3, clue: "Worship", row: 2, col: 0, length: 5 },
-      { number: 5, clue: "Sugary, like candy", row: 4, col: 0, length: 5 },
+      { number: 3, clue: "Placeholder clue", row: 1, col: 0, length: 5 },
+      { number: 6, clue: "Placeholder clue", row: 2, col: 0, length: 5 },
     ] as CrosswordClue[],
     down: [
-      { number: 1, clue: "Embrace tightly", row: 0, col: 0, length: 5 },
-      { number: 2, clue: "Worship, revere", row: 0, col: 2, length: 5 },
-      { number: 4, clue: "Feet appendages", row: 0, col: 4, length: 5 },
+      { number: 1, clue: "Placeholder clue", row: 0, col: 1, length: 4 },
+      { number: 2, clue: "Placeholder clue", row: 0, col: 3, length: 4 },
+      { number: 4, clue: "Placeholder clue", row: 1, col: 2, length: 3 },
+      { number: 5, clue: "Placeholder clue", row: 1, col: 4, length: 2 },
+      { number: 7, clue: "Placeholder clue", row: 3, col: 1, length: 2 },
     ] as CrosswordClue[],
   },
 };
