@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Happy Valentine's Day!",
-  description: "A special Valentine's Day gift — play some games!",
+  title: "Custom NYT Games",
+  description: "A collection of custom NYT-style mini games.",
 };
 
 export default function RootLayout({

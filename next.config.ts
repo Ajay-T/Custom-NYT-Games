@@ -2,7 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: "/Custom-NYT-Games",
+  // If deploying to GitHub Pages at https://<user>.github.io/<repo>/,
+  // uncomment and set basePath to your repo name:
+  // basePath: "/your-repo-name",
   images: { unoptimized: true },
 };
 

@@ -5,54 +5,36 @@ const games = [
     title: "Wordle",
     description: "Guess the 5-letter word in 6 tries",
     href: "/wordle",
-    emoji: "💝",
+    emoji: "🔤",
   },
   {
     title: "Connections",
     description: "Group 16 words into 4 categories",
     href: "/connections",
-    emoji: "💘",
+    emoji: "🔗",
   },
   {
     title: "Crossword Mini",
     description: "Solve a mini crossword puzzle",
     href: "/crossword",
-    emoji: "💌",
+    emoji: "📝",
   },
 ];
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center px-4 py-12 relative overflow-hidden">
-      {/* Decorative background hearts */}
-      <div className="absolute inset-0 pointer-events-none select-none opacity-10 text-rose text-6xl overflow-hidden" aria-hidden="true">
-        {["❤", "💕", "♥", "💗", "❤", "♥", "💕", "💗", "❤", "💕"].map((h, i) => (
-          <span
-            key={i}
-            className="absolute"
-            style={{
-              left: `${(i * 10) + 2}%`,
-              top: `${(i * 7 + 15) % 90}%`,
-              fontSize: `${1.5 + (i % 3)}rem`,
-              transform: `rotate(${i * 36}deg)`,
-            }}
-          >
-            {h}
-          </span>
-        ))}
-      </div>
-
-      <div className="text-center mb-12 relative z-10">
-        <p className="text-5xl mb-4">💖</p>
+    <main className="min-h-screen flex flex-col items-center justify-center px-4 py-12">
+      <div className="text-center mb-12">
+        <p className="text-5xl mb-4">🎮</p>
         <h1 className="text-4xl sm:text-5xl font-bold text-rose mb-3">
-          Happy Valentine&apos;s Day!
+          Custom NYT Games
         </h1>
         <p className="text-warm-gray text-lg max-w-md mx-auto">
-          I made you some games. Pick one and play!
+          Pick a game and play!
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl w-full relative z-10">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl w-full">
         {games.map((game) => (
           <Link
             key={game.title}
